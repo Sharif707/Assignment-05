@@ -14,9 +14,7 @@ const gettextField = function (id) {
   return textField;
 };
 
-// function closeModal(){
-//   const close = document.getElementById('close')
-// }
+
 
 document.getElementById("donate-btn").addEventListener("click", function () {
   const noakhaliDonation = getFieldValuebyID("noakhali-donation");
