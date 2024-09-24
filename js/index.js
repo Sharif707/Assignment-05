@@ -3,6 +3,7 @@ const cardContainer = document.getElementById("card-container");
 const historyButton = document.getElementById("history-btn");
 const donationButton = document.getElementById("donation-btn");
 const donationHistory = document.getElementById("donation-history");
+const modal = document.getElementById("my_modal_1");
 
 const getFieldValuebyID = function (id) {
   const inputButton = parseFloat(document.getElementById(id).value);
@@ -13,10 +14,11 @@ const gettextField = function (id) {
   return textField;
 };
 
-document.getElementById("donate-btn").addEventListener("click", function () {
-  // getFieldValuebyID("noakhali-donation", "total-donation");
+// function closeModal(){
+//   const close = document.getElementById('close')
+// }
 
-  // const noakhaliDonation = parseFloat(document.getElementById('noakhali-donation').value)
+document.getElementById("donate-btn").addEventListener("click", function () {
   const noakhaliDonation = getFieldValuebyID("noakhali-donation");
 
   const donatedAmount = gettextField("total-donation");
@@ -30,12 +32,12 @@ document.getElementById("donate-btn").addEventListener("click", function () {
   } else if (isNaN(noakhaliDonation)) {
     return alert("Write valid number");
   } else {
+    modal.showModal();
+
     document.getElementById("total-donation").innerText =
       noakhaliDonation + donatedAmount;
     let totalAccountBal = accountBalance - noakhaliDonation;
     document.getElementById("account-balance").innerText = totalAccountBal;
-
-    //  return alert("Thanks For Donating", donationInput);
   }
 
   const historyCard = document.createElement("div");
@@ -68,6 +70,8 @@ document.getElementById("donate-btn-2").addEventListener("click", function () {
   } else if (isNaN(feniDonation)) {
     return alert("Write valid number");
   } else {
+     
+    modal.showModal()
     document.getElementById("total-donation-2").innerText =
       feniDonation + donatedAmount;
     let totalAccountBal = accountBalance - feniDonation;
@@ -103,12 +107,13 @@ document.getElementById("donate-btn-3").addEventListener("click", function () {
   } else if (isNaN(quotaDonation)) {
     return alert("Write valid number");
   } else {
+     
+    modal.showModal()
     document.getElementById("total-donation-3").innerText =
       quotaDonation + donatedAmount;
     let totalAccountBal = accountBalance - quotaDonation;
     document.getElementById("account-balance").innerText = totalAccountBal;
 
-    //  return alert("Thanks For Donating", donationInput);
   }
 
   const historyCard = document.createElement("div");
